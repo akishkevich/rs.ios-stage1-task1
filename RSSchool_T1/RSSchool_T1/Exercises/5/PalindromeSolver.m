@@ -4,14 +4,14 @@
 
 // Complete the highestValuePalindrome function below.
 - (NSString *) highestValuePalindrome:(NSString *)s n:(NSNumber *)n k:(NSNumber *)k {
-    NSMutableArray *arr = [PalindromeSolver parseStrToArr: s];
+    NSMutableArray<NSString *> *arr = [PalindromeSolver parseStrToArr: s];
     int count = 0;
     long prevMax = 0;
 
     for (int i = ([n intValue] / 2); i >= 0; i -= 1) {
-
         NSInteger leftElem = [[arr objectAtIndex: i] integerValue];
         NSInteger rightElem = [[arr objectAtIndex: ([n intValue] - i - 1) ] integerValue];
+        
         if (leftElem != rightElem) {
             prevMax = MAX(prevMax, MAX(leftElem, rightElem));
             arr[i] = [NSString stringWithFormat:@"%ld", prevMax];
@@ -31,7 +31,7 @@
 }
 
 + (NSMutableArray*)parseStrToArr: (NSString *)str {
-    NSMutableArray *arrStr = [[NSMutableArray alloc] initWithArray:@[]];
+    NSMutableArray<NSString *> *arrStr = [[NSMutableArray alloc] initWithArray:@[]];
     NSUInteger strLength = [str length];
     for (int i = 0; i < strLength; i++) {
         NSString *ch = [str substringWithRange:NSMakeRange(i, 1)];

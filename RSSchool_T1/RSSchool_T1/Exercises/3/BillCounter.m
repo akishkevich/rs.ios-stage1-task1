@@ -4,7 +4,7 @@
 
 // Complete the following fuction
 - (NSString*)compareResultForBill:(NSArray<NSNumber*>*)bill notIncludingElementWithIndex:(NSInteger)index withGivenSum:(NSNumber*)sum {
-    NSMutableArray *billArr = [[NSMutableArray alloc] initWithArray: bill];
+    NSMutableArray<NSString *> *billArr = [[NSMutableArray alloc] initWithArray: bill];
     [billArr removeObjectAtIndex:index];
     int sumAnn = [[billArr valueForKeyPath:@"@sum.self"] intValue] / 2;
 

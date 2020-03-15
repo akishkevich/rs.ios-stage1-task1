@@ -25,8 +25,8 @@
 
 - (NSArray *)cleanUpArray: (NSArray *)sadArray {
     
-    NSMutableArray *entryArray = [[NSMutableArray alloc] initWithArray: sadArray];
-    NSMutableArray *cleanupArr = [[NSMutableArray alloc] init];
+    NSMutableArray<NSNumber *> *entryArray = [[NSMutableArray alloc] initWithArray: sadArray];
+    NSMutableArray<NSNumber *> *cleanupArr = [[NSMutableArray alloc] init];
     
     int tick = 1;
     while (![entryArray isEqualToArray: cleanupArr]) {
